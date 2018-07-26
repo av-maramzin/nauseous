@@ -12,7 +12,8 @@ IS_BMK_CLASS="C"
 #
 
 # use Intel ICC specific flags
-ICC_FLAGS="${ICC_FLAGS} -O2"
+ICC_FLAGS="${ICC_FLAGS} -O3"
+ICC_FLAGS="${ICC_FLAGS} -ip_no_inlining"
 ICC_FLAGS="${ICC_FLAGS} -parallel"
 ICC_FLAGS="${ICC_FLAGS} -ipo"
 ICC_FLAGS="${ICC_FLAGS} -mcmodel=medium"
@@ -20,7 +21,7 @@ ICC_FLAGS="${ICC_FLAGS} -mcmodel=medium"
 #ICC_FLAGS="${ICC_FLAGS} -xcore2 -axcore2"
 ICC_FLAGS="${ICC_FLAGS} -xcorei7 -axcorei7"
 ICC_FLAGS="${ICC_FLAGS} -par-threshold0"
-ICC_FLAGS="${ICC_FLAGS} -qopt-report=5"
+ICC_FLAGS="${ICC_FLAGS} -qopt-report=1"
 ICC_FLAGS="${ICC_FLAGS} -qopt-report-phase=par"
 #ICC_FLAGS="${ICC_FLAGS} -qopt-report-phase=par,loop"
 ICC_FLAGS="${ICC_FLAGS} -qopt-report-file=report.txt"
