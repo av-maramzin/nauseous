@@ -13,7 +13,7 @@ IS_BMK_CLASS="C"
 #
 
 C_FLAGS="-g -Wall"
-C_FLAGS="${C_FLAGS} -O0"
+C_FLAGS="${C_FLAGS} -O0 -fno-inline-functions"
 C_FLAGS="${C_FLAGS} -mcmodel=medium"
 LINKER_FLAGS="-Wl,-L$(llvm-config --libdir) -Wl,-rpath=$(llvm-config --libdir)"
 LINKER_FLAGS="${LINKER_FLAGS}" 

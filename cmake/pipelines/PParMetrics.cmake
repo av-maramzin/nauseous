@@ -36,14 +36,14 @@ function(PParMetricsPipeline trgt)
     TARGET ${PIPELINE_PREFIX}_pdg
     DEPENDS ${PIPELINE_PREFIX}_bc
     -mem2reg
-    -load /home/s1736883/Work/PParMetrics-build/libppar.so -dot-pdg)
+    -load /home/s1736883/Work/PParMetrics/build/libppar.so -dot-pdg)
   add_dependencies(${PIPELINE_PREFIX}_pdg ${PIPELINE_PREFIX}_bc)
 
   llvmir_attach_opt_pass_target(
     TARGET ${PIPELINE_PREFIX}_metrics
     DEPENDS ${PIPELINE_PREFIX}_bc
     -mem2reg
-    -load /home/s1736883/Work/PParMetrics-build/libppar.so -ppar-metrics-collector)
+    -load /home/s1736883/Work/PParMetrics/build/libppar.so -ppar-metrics-collector)
   add_dependencies(${PIPELINE_PREFIX}_metrics ${PIPELINE_PREFIX}_bc)
 
   llvmir_attach_link_target(
