@@ -6,6 +6,7 @@ INSTALL_PREFIX=${2:-../install/}
 
 PIPELINE_CONFIG_FILE="${SRC_DIR}/config/pipelines/ppar_metrics.txt"
 BMK_CONFIG_FILE="${SRC_DIR}/config/suite_all.txt"
+BMK_TYPE="OMP"
 BMK_CLASS="B"
 MG_BMK_CLASS="C"
 IS_BMK_CLASS="C"
@@ -16,7 +17,7 @@ C_FLAGS="-g -Wall"
 C_FLAGS="${C_FLAGS} -O0 -fno-inline-functions"
 C_FLAGS="${C_FLAGS} -mcmodel=medium"
 LINKER_FLAGS="-Wl,-L$(llvm-config --libdir) -Wl,-rpath=$(llvm-config --libdir)"
-LINKER_FLAGS="${LINKER_FLAGS}" 
+LINKER_FLAGS="${LINKER_FLAGS} -lomp" 
 
 CC=clang CXX=clang++ \
   cmake \
@@ -33,6 +34,7 @@ CC=clang CXX=clang++ \
   -DHARNESS_PIPELINE_CONFIG_FILE=${PIPELINE_CONFIG_FILE} \
   -DHARNESS_BMK_CONFIG_FILE=${BMK_CONFIG_FILE} \
   -DBMK_CLASS=${BMK_CLASS} \
+  -DBMK_TYPE=${BMK_TYPE} \
   -DMG_BMK_CLASS=${MG_BMK_CLASS} \
   -DIS_BMK_CLASS=${IS_BMK_CLASS} \
   "${SRC_DIR}"
