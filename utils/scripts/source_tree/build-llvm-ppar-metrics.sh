@@ -14,8 +14,11 @@ IS_BMK_CLASS="C"
 #
 
 C_FLAGS="-g -Wall"
-C_FLAGS="${C_FLAGS} -O0 -fno-inline-functions"
+#C_FLAGS="${C_FLAGS} -O1 -Xclang -disable-llvm-optzns"
+#C_FLAGS="${C_FLAGS} -fno-inline-functions"
+#C_FLAGS="${C_FLAGS} -O0 -fno-inline-functions"
 C_FLAGS="${C_FLAGS} -mcmodel=medium"
+C_FLAGS="${C_FLAGS} -O0 -fno-inline-functions -Xclang -disable-O0-optnone"
 LINKER_FLAGS="-Wl,-L$(llvm-config --libdir) -Wl,-rpath=$(llvm-config --libdir)"
 LINKER_FLAGS="${LINKER_FLAGS} -lomp" 
 
