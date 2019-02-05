@@ -6,15 +6,15 @@ INSTALL_PREFIX=${2:-../install/}
 
 BMK_CONFIG_FILE="${SRC_DIR}/config/suite_all.txt"
 BMK_TYPE="OMP"
-BMK_CLASS="S"
-MG_BMK_CLASS="S"
-IS_BMK_CLASS="S"
+BMK_CLASS="E"
+MG_BMK_CLASS="E"
+IS_BMK_CLASS="E"
 
 # use Intel ICC specific flags
 ICC_FLAGS="${ICC_FLAGS} -O3"
 #ICC_FLAGS="${ICC_FLAGS} -g"
-#ICC_FLAGS="${ICC_FLAGS} -parallel"
-#ICC_FLAGS="${ICC_FLAGS} -vec"
+ICC_FLAGS="${ICC_FLAGS} -parallel"
+ICC_FLAGS="${ICC_FLAGS} -vec"
 ICC_FLAGS="${ICC_FLAGS} -ipo"
 #ICC_FLAGS="${ICC_FLAGS} -ip-no-inlining"
 #ICC_FLAGS="${ICC_FLAGS} -unroll0"

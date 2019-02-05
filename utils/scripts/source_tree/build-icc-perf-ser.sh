@@ -5,7 +5,7 @@ SRC_DIR=${1:-$PRJ_ROOT_DIR}
 INSTALL_PREFIX=${2:-../install/}
 
 BMK_CONFIG_FILE="${SRC_DIR}/config/suite_all.txt"
-#BMK_TYPE="OMP"
+BMK_TYPE="OMP"
 BMK_CLASS="S"
 MG_BMK_CLASS="S"
 IS_BMK_CLASS="S"
@@ -25,6 +25,7 @@ ICC_FLAGS="${ICC_FLAGS} -xHost"
 ICC_FLAGS="${ICC_FLAGS} -qopt-report=5"
 ICC_FLAGS="${ICC_FLAGS} -qopt-report-phase=vec,par,loop,ipo"
 ICC_FLAGS="${ICC_FLAGS} -qopt-report-file=report.txt"
+ICC_FLAGS="${ICC_FLAGS} -qopenmp-stubs"
 #ICC_FLAGS="${ICC_FLAGS} -qopenmp"
 #ICC_FLAGS="${ICC_FLAGS} -debug inline-debug-info"
 
