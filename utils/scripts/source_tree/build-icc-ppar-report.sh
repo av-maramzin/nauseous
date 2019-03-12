@@ -7,8 +7,8 @@ INSTALL_PREFIX=${2:-../install/}
 BMK_CONFIG_FILE="${SRC_DIR}/config/suite_all.txt"
 BMK_TYPE="OMP"
 BMK_CLASS="B"
-MG_BMK_CLASS="C"
-IS_BMK_CLASS="C"
+MG_BMK_CLASS="B"
+IS_BMK_CLASS="B"
 
 # use Intel ICC specific flags
 ICC_FLAGS="${ICC_FLAGS} -O3"
