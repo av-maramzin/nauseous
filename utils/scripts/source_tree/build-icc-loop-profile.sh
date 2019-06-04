@@ -31,7 +31,7 @@ ICC_FLAGS="${ICC_FLAGS} -qopenmp-stubs"
 #ICC_FLAGS="${ICC_FLAGS} -debug inline-debug-info"
 ICC_FLAGS="${ICC_FLAGS} -profile-functions"
 ICC_FLAGS="${ICC_FLAGS} -profile-loops=all"
-ICC_FLAGS="${ICC_FLAGS} -profile-loops-report=1"
+ICC_FLAGS="${ICC_FLAGS} -profile-loops-report=2"
 
 C_FLAGS="${CMAKE_C_FLAGS} ${ICC_FLAGS}"
 CXX_FLAGS="${CMAKE_CXX_FLAGS} ${ICC_FLAGS}"
